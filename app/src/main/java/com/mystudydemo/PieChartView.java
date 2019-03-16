@@ -20,8 +20,7 @@ import com.mystudydemo.utils.DisplayUtil;
  */
 public class PieChartView extends View {
     private static final int RADIUS = (int) DisplayUtil.dp2px(100);
-    private static final int LENGTH = (int) DisplayUtil.dp2px(20);
-    private static final int PULLED_OUT_INDEX = 2;
+    private static final int PULLED_OUT_INDEX = 3;
 
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     RectF bounds;
@@ -50,8 +49,11 @@ public class PieChartView extends View {
         int currentAngle = 0;
         for (int i = 0; i < angles.length; i++) {
             paint.setColor(colors[i]);
-            if (i == 1) {
+            if (i == PULLED_OUT_INDEX) {
+                canvas.save();
+                canvas.translate((float) Math.cos(Math.toRadians(currentAngle + angles[i] / 2)) * RADIUS / 4, (float) Math.sin(Math.toRadians(currentAngle + angles[i] / 2)) * RADIUS / 4);
                 canvas.drawArc(bounds, currentAngle, angles[i], true, paint);
+                canvas.restore();
             } else {
                 canvas.drawArc(bounds, currentAngle, angles[i], true, paint);
             }
