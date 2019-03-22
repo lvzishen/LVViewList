@@ -9,7 +9,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/drawview" />
             <option value="$PROJECT_DIR$/linklistDemo" />
             <option value="$PROJECT_DIR$/proxyDemo" />
           </set>

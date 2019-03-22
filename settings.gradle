@@ -1,1 +1,1 @@
-include ':app', ':proxyDemo', ':linklistDemo', ':drawview'
+include ':app', ':proxyDemo', ':linklistDemo'
